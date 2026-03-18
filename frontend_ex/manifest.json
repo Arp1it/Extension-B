@@ -1,0 +1,17 @@
+{
+  "name": ".Echo Cipher",
+  "version": "1.0.0",
+  "manifest_version": 3,
+
+  "action": {
+    "default_title": "Echo Cipher"
+  },
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "permissions": ["tabs"],
+
+  "host_permissions": ["http://127.0.0.1:5000/*"]
+}

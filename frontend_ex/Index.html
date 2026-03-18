@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistant</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", system-ui, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: radial-gradient(circle at top, #0f172a, #020617);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #e2e8f0;
+            overflow: hidden;
+        }
+
+        /* Soft glowing orb */
+        .orb {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #38bdf8, #6366f1);
+            box-shadow: 
+                0 0 40px rgba(99, 102, 241, 0.6),
+                0 0 80px rgba(56, 189, 248, 0.4);
+            animation: pulse 2.5s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 
+                    0 0 40px rgba(99, 102, 241, 0.6),
+                    0 0 80px rgba(56, 189, 248, 0.4);
+            }
+            50% {
+                transform: scale(1.1);
+                box-shadow: 
+                    0 0 60px rgba(99, 102, 241, 0.9),
+                    0 0 120px rgba(56, 189, 248, 0.7);
+            }
+        }
+
+        /* Subtle background particles */
+        .bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .bg span {
+            position: absolute;
+            display: block;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 10s linear infinite;
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-10vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg">
+        <span style="left:10%; animation-duration:8s;"></span>
+        <span style="left:25%; animation-duration:12s;"></span>
+        <span style="left:40%; animation-duration:10s;"></span>
+        <span style="left:60%; animation-duration:14s;"></span>
+        <span style="left:75%; animation-duration:9s;"></span>
+        <span style="left:90%; animation-duration:11s;"></span>
+    </div>
+
+    <div class="orb"></div>
+
+    <!-- <button id="startBtn" type="button">Start</button> -->
+    <script src="Index.js"></script>
+</body>
+</html>
